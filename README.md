@@ -1,6 +1,6 @@
 # 🛒 SmartCommerce Manager
 
-O **SmartCommerce** é um sistema de Gestão Comercial e Ponto de Venda (PDV) desenvolvido em Python. A aplicação oferece uma solução completa para pequenos comércios, unindo controlo de stock, operações de venda e inteligência de negócio (BI) numa interface intuitiva.
+O **[SmartCommerce](https://smartcommerce.streamlit.app/)** é um sistema de Gestão Comercial e Ponto de Venda (PDV) desenvolvido em Python. A aplicação oferece uma solução completa para pequenos comércios, unindo controlo de stock, operações de venda e inteligência de negócio (BI) numa interface intuitiva.
 
 ## 🚀 Funcionalidades
 
