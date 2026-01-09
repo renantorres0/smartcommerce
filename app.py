@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import plotly.express as px
-from database import conectar, registrar_venda, registrar_movimento_db, atualizar_produto_db
+from database import criar_tabelas, conectar, registrar_venda, registrar_movimento_db, atualizar_produto_db
+
+criar_tabelas()
 
 st.set_page_config(page_title="SmartCommerce - Gestão", layout="wide")
 # Inicializa o carrinho na memória da sessão se não existir
