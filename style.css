@@ -68,6 +68,20 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* FORÇA MODO CLARO - EVITA DARK MODE */
+html, body, [data-testid="stAppViewContainer"], .main {
+  background: var(--gray-50) !important;
+  color: var(--gray-900) !important;
+  color-scheme: light !important;
+}
+
+/* Força todos os containers principais a serem brancos */
+div[data-testid="stVerticalBlock"] > div,
+div[data-testid="stHorizontalBlock"] > div,
+div[data-testid="column"] {
+  color: var(--gray-900) !important;
+}
+
 /* Fonte principal do app */
 .main, .stApp {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -418,10 +432,34 @@ h3 {
 
 /* Select boxes */
 .stSelectbox > div > div,
-.stMultiSelect > div > div {
+.stMultiSelect > div > div,
+[data-baseweb="select"],
+[data-baseweb="select"] > div {
   border-radius: var(--radius-lg) !important;
   border: 2px solid var(--gray-200) !important;
   background: white !important;
+  color: var(--gray-900) !important;
+}
+
+/* Dropdown do select */
+[data-baseweb="popover"] {
+  background: white !important;
+}
+
+[role="listbox"],
+[role="option"] {
+  background: white !important;
+  color: var(--gray-900) !important;
+}
+
+[role="option"]:hover {
+  background: var(--primary-50) !important;
+}
+
+/* Texto dentro do select */
+.stSelectbox span,
+.stSelectbox div {
+  color: var(--gray-900) !important;
 }
 
 /* Correção para number inputs que ficam escuros */
@@ -430,8 +468,15 @@ input[type="text"],
 textarea {
   background-color: white !important;
   color: var(--gray-900) !important;
+  caret-color: var(--primary-600) !important; /* Cursor azul visível */
   -webkit-appearance: none;
   -moz-appearance: textfield;
+}
+
+/* Garantir cursor visível em todos os inputs */
+input:focus,
+textarea:focus {
+  caret-color: var(--primary-600) !important;
 }
 
 /* Botões +/- do number input */
@@ -446,13 +491,27 @@ input[type="number"]::-webkit-outer-spin-button {
 /* TABELAS / DATAFRAMES */
 /* ============================================ */
 
-[data-testid="stDataFrame"] {
+/* Container da tabela */
+[data-testid="stDataFrame"],
+[data-testid="stDataFrame"] > div,
+.stDataFrame {
   border-radius: var(--radius-xl) !important;
   overflow: hidden !important;
   box-shadow: var(--shadow-md) !important;
   border: 1px solid var(--gray-200) !important;
+  background: white !important;
 }
 
+/* Células da tabela */
+[data-testid="stDataFrame"] table,
+[data-testid="stDataFrame"] tbody,
+[data-testid="stDataFrame"] tr,
+[data-testid="stDataFrame"] td {
+  background: white !important;
+  color: var(--gray-900) !important;
+}
+
+/* Cabeçalho da tabela */
 [data-testid="stDataFrame"] th {
   background: var(--gray-100) !important;
   color: var(--gray-700) !important;
@@ -464,14 +523,28 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 1rem !important;
 }
 
+/* Células individuais */
 [data-testid="stDataFrame"] td {
   padding: 0.875rem 1rem !important;
   font-family: 'Inter', sans-serif !important;
   border-bottom: 1px solid var(--gray-100) !important;
+  color: var(--gray-900) !important;
 }
 
+/* Hover nas linhas */
 [data-testid="stDataFrame"] tr:hover {
   background: var(--primary-50) !important;
+}
+
+/* Data editor específico */
+.stDataFrame table,
+[data-testid="data-grid-container"] {
+  background: white !important;
+}
+
+[data-testid="data-grid-container"] * {
+  color: var(--gray-900) !important;
+  background: white !important;
 }
 
 /* ============================================ */
@@ -558,12 +631,40 @@ input[type="number"]::-webkit-outer-spin-button {
 /* GRÁFICOS PLOTLY */
 /* ============================================ */
 
+/* Container do gráfico */
 .js-plotly-plot {
   border-radius: var(--radius-xl) !important;
   overflow: hidden !important;
   background: white !important;
   padding: 1rem !important;
   box-shadow: var(--shadow-md) !important;
+}
+
+/* Fundo branco apenas no container, não nos elementos internos */
+.js-plotly-plot .plotly {
+  background: white !important;
+}
+
+/* NÃO forçar branco nos SVGs (preserva os gráficos) */
+.js-plotly-plot svg {
+  background: transparent !important;
+}
+
+/* Manter grid e textos visíveis mas sutis */
+.js-plotly-plot .gridlayer line {
+  stroke: var(--gray-200) !important;
+  stroke-opacity: 0.5 !important;
+}
+
+/* Textos dos eixos */
+.js-plotly-plot .xtick text,
+.js-plotly-plot .ytick text {
+  fill: var(--gray-600) !important;
+}
+
+/* Títulos dos gráficos */
+.js-plotly-plot .g-gtitle text {
+  fill: var(--gray-800) !important;
 }
 
 /* ============================================ */

@@ -264,7 +264,9 @@ with tab1:
         fig_evolucao.update_layout(
             template='plotly_white',
             hovermode='x unified',
-            plot_bgcolor='rgba(0,0,0,0)'
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='#374151')
         )
         st.plotly_chart(fig_evolucao, use_container_width=True)
 
@@ -286,7 +288,12 @@ with tab1:
                 title="Produtos Mais Vendidos (Volume)"
             )
             fig_top_qtd.update_traces(marker_color='#10B981')
-            fig_top_qtd.update_layout(template='plotly_white')
+            fig_top_qtd.update_layout(
+                template='plotly_white',
+                plot_bgcolor='white',
+                paper_bgcolor='white',
+                font=dict(color='#374151')
+            )
             st.plotly_chart(fig_top_qtd, use_container_width=True)
 
         with col_dir:
@@ -301,7 +308,12 @@ with tab1:
                     hole=0.4, 
                     title="Distribuição de Itens em Estoque"
                 )
-                fig_pizza_est.update_layout(template='plotly_white')
+                fig_pizza_est.update_layout(
+                    template='plotly_white',
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#374151')
+                )
                 st.plotly_chart(fig_pizza_est, use_container_width=True)
             else:
                 st.info("Cadastre produtos no estoque primeiro.")
