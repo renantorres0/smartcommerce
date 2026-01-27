@@ -1,0 +1,678 @@
+/* ============================================ */
+/* SMARTCOMMERCE - CUSTOM STYLES */
+/* ============================================ */
+
+/* IMPORTAR FONTES DO GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================ */
+/* VARIÁVEIS CSS */
+/* ============================================ */
+
+:root {
+  /* Cores Principais */
+  --primary-50: #EFF6FF;
+  --primary-100: #DBEAFE;
+  --primary-500: #3B82F6;
+  --primary-600: #2563EB;
+  --primary-700: #1D4ED8;
+  --primary-900: #1E3A8A;
+  
+  /* Success */
+  --success-50: #ECFDF5;
+  --success-500: #10B981;
+  --success-600: #059669;
+  
+  /* Warning */
+  --warning-50: #FFFBEB;
+  --warning-500: #F59E0B;
+  
+  /* Danger */
+  --danger-50: #FEF2F2;
+  --danger-500: #EF4444;
+  
+  /* Grays */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-500: #6B7280;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  
+  /* Espaçamento */
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  
+  /* Bordas */
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Sombras */
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================ */
+/* RESET E BASE */
+/* ============================================ */
+
+* {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fonte principal do app */
+.main, .stApp {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--gray-50);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--gray-900) !important;
+}
+
+h1 {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1rem !important;
+}
+
+h2 {
+  font-size: 1.875rem !important;
+  margin-bottom: 0.875rem !important;
+}
+
+h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* ============================================ */
+/* SIDEBAR - NAVEGAÇÃO PRINCIPAL */
+/* ============================================ */
+
+/* Container da Sidebar */
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #1E3A8A 0%, #1E40AF 100%) !important;
+  padding: 1.5rem 1rem !important;
+}
+
+/* Títulos e textos na sidebar */
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] .stSelectbox label,
+[data-testid="stSidebar"] .stRadio label {
+  color: white !important;
+}
+
+/* Links na sidebar */
+[data-testid="stSidebar"] a {
+  color: #DBEAFE !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+[data-testid="stSidebar"] a:hover {
+  color: white !important;
+  transform: translateX(4px);
+}
+
+/* Separadores na sidebar */
+[data-testid="stSidebar"] hr {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ============================================ */
+/* HEADER CUSTOMIZADO */
+/* ============================================ */
+
+.custom-header {
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+  color: white;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-2xl);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.custom-header h1 {
+  color: white !important;
+  margin: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.custom-header p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0.5rem 0 0 0 !important;
+  font-size: 1.125rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================ */
+/* CARDS DE MÉTRICAS */
+/* ============================================ */
+
+.metric-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.metric-card.primary {
+  border-left: 4px solid var(--primary-500);
+}
+
+.metric-card.success {
+  border-left: 4px solid var(--success-500);
+}
+
+.metric-card.warning {
+  border-left: 4px solid var(--warning-500);
+}
+
+.metric-card.danger {
+  border-left: 4px solid var(--danger-500);
+}
+
+/* Decoração de fundo nos cards */
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--primary-50);
+  border-radius: 0 0 0 100%;
+  opacity: 0.5;
+}
+
+.metric-card.success::before {
+  background: var(--success-50);
+}
+
+.metric-card.warning::before {
+  background: var(--warning-50);
+}
+
+.metric-card.danger::before {
+  background: var(--danger-50);
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin: 0.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  z-index: 1;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.metric-change {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.metric-change.positive {
+  color: var(--success-600);
+}
+
+.metric-change.negative {
+  color: var(--danger-500);
+}
+
+/* ============================================ */
+/* BOTÕES */
+/* ============================================ */
+
+.stButton > button {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0.625rem 1.5rem !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  font-size: 0.9375rem !important;
+}
+
+/* Botão Primary */
+.stButton > button[kind="primary"],
+.stButton > button[data-baseweb="button"]:not([kind="secondary"]) {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
+  color: white !important;
+  box-shadow: var(--shadow-primary) !important;
+}
+
+.stButton > button[kind="primary"]:hover,
+.stButton > button[data-baseweb="button"]:not([kind="secondary"]):hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Botão Secondary */
+.stButton > button[kind="secondary"] {
+  background: white !important;
+  color: var(--primary-600) !important;
+  border: 2px solid var(--primary-500) !important;
+}
+
+.stButton > button[kind="secondary"]:hover {
+  background: var(--primary-50) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ============================================ */
+/* INPUTS E FORMULÁRIOS */
+/* ============================================ */
+
+/* Text Inputs */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stTextArea textarea {
+  border-radius: var(--radius-lg) !important;
+  border: 2px solid var(--gray-200) !important;
+  padding: 0.75rem 1rem !important;
+  font-family: 'Inter', sans-serif !important;
+  transition: all 0.2s ease !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stTextArea textarea:focus {
+  border-color: var(--primary-500) !important;
+  box-shadow: 0 0 0 3px var(--primary-50) !important;
+}
+
+/* Labels */
+.stTextInput label,
+.stNumberInput label,
+.stSelectbox label,
+.stMultiSelect label,
+.stTextArea label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--gray-700) !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Select boxes */
+.stSelectbox > div > div,
+.stMultiSelect > div > div {
+  border-radius: var(--radius-lg) !important;
+  border: 2px solid var(--gray-200) !important;
+}
+
+/* ============================================ */
+/* TABELAS / DATAFRAMES */
+/* ============================================ */
+
+[data-testid="stDataFrame"] {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--gray-200) !important;
+}
+
+[data-testid="stDataFrame"] th {
+  background: var(--gray-100) !important;
+  color: var(--gray-700) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em !important;
+  padding: 1rem !important;
+}
+
+[data-testid="stDataFrame"] td {
+  padding: 0.875rem 1rem !important;
+  font-family: 'Inter', sans-serif !important;
+  border-bottom: 1px solid var(--gray-100) !important;
+}
+
+[data-testid="stDataFrame"] tr:hover {
+  background: var(--primary-50) !important;
+}
+
+/* ============================================ */
+/* ALERTAS E MENSAGENS */
+/* ============================================ */
+
+/* Success */
+.stSuccess {
+  background: var(--success-50) !important;
+  border-left: 4px solid var(--success-500) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem !important;
+  color: var(--success-600) !important;
+}
+
+/* Info */
+.stInfo {
+  background: var(--primary-50) !important;
+  border-left: 4px solid var(--primary-500) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem !important;
+  color: var(--primary-600) !important;
+}
+
+/* Warning */
+.stWarning {
+  background: var(--warning-50) !important;
+  border-left: 4px solid var(--warning-500) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem !important;
+  color: #D97706 !important;
+}
+
+/* Error */
+.stError {
+  background: var(--danger-50) !important;
+  border-left: 4px solid var(--danger-500) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem !important;
+  color: var(--danger-500) !important;
+}
+
+/* ============================================ */
+/* ALERTA DE ESTOQUE BAIXO (CUSTOM) */
+/* ============================================ */
+
+.alert-low-stock {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+  border-left: 4px solid var(--danger-500);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.alert-low-stock:hover {
+  transform: translateX(4px);
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-content strong {
+  color: var(--danger-500);
+  font-weight: 700;
+}
+
+.alert-content small {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+/* ============================================ */
+/* GRÁFICOS PLOTLY */
+/* ============================================ */
+
+.js-plotly-plot {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  background: white !important;
+  padding: 1rem !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* ============================================ */
+/* CARDS GERAIS */
+/* ============================================ */
+
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  border-bottom: 2px solid var(--gray-100);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  margin: 0 !important;
+  color: var(--gray-800) !important;
+}
+
+/* ============================================ */
+/* BADGES E TAGS */
+/* ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-primary {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.badge-success {
+  background: var(--success-50);
+  color: var(--success-600);
+}
+
+.badge-warning {
+  background: var(--warning-50);
+  color: #D97706;
+}
+
+.badge-danger {
+  background: var(--danger-50);
+  color: var(--danger-500);
+}
+
+/* ============================================ */
+/* ANIMAÇÕES */
+/* ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ============================================ */
+/* UTILITÁRIOS */
+/* ============================================ */
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.p-4 {
+  padding: 1rem !important;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .custom-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+  }
+  
+  .metric-card {
+    padding: 1.25rem;
+  }
+}
+
+/* ============================================ */
+/* SCROLLBAR CUSTOMIZADA */
+/* ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* ============================================ */
+/* REMOVER ELEMENTOS INDESEJADOS */
+/* ============================================ */
+
+/* Esconder menu do Streamlit */
+#MainMenu {
+  visibility: hidden;
+}
+
+/* Esconder footer */
+footer {
+  visibility: hidden;
+}
+
+/* Reduzir padding superior */
+.block-container {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
