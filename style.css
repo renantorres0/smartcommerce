@@ -346,14 +346,16 @@ h3 {
 
 /* Botão Primary */
 .stButton > button[kind="primary"],
-.stButton > button[data-baseweb="button"]:not([kind="secondary"]) {
+.stButton > button[data-baseweb="button"]:not([kind="secondary"]),
+.stFormSubmitButton > button {
   background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
   color: white !important;
   box-shadow: var(--shadow-primary) !important;
 }
 
 .stButton > button[kind="primary"]:hover,
-.stButton > button[data-baseweb="button"]:not([kind="secondary"]):hover {
+.stButton > button[data-baseweb="button"]:not([kind="secondary"]):hover,
+.stFormSubmitButton > button:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 15px 35px -10px rgba(59, 130, 246, 0.4) !important;
 }
@@ -378,6 +380,8 @@ h3 {
 .stTextInput > div > div > input,
 .stNumberInput > div > div > input,
 .stTextArea textarea {
+  background: white !important;
+  color: var(--gray-900) !important;
   border-radius: var(--radius-lg) !important;
   border: 2px solid var(--gray-200) !important;
   padding: 0.75rem 1rem !important;
@@ -390,6 +394,13 @@ h3 {
 .stTextArea textarea:focus {
   border-color: var(--primary-500) !important;
   box-shadow: 0 0 0 3px var(--primary-50) !important;
+  outline: none !important;
+}
+
+/* Placeholder text */
+.stTextInput > div > div > input::placeholder,
+.stNumberInput > div > div > input::placeholder {
+  color: var(--gray-400) !important;
 }
 
 /* Labels */
@@ -410,6 +421,25 @@ h3 {
 .stMultiSelect > div > div {
   border-radius: var(--radius-lg) !important;
   border: 2px solid var(--gray-200) !important;
+  background: white !important;
+}
+
+/* Correção para number inputs que ficam escuros */
+input[type="number"],
+input[type="text"],
+textarea {
+  background-color: white !important;
+  color: var(--gray-900) !important;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+/* Botões +/- do number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  background: var(--gray-100);
+  border-radius: 0.25rem;
 }
 
 /* ============================================ */
@@ -534,6 +564,43 @@ h3 {
   background: white !important;
   padding: 1rem !important;
   box-shadow: var(--shadow-md) !important;
+}
+
+/* ============================================ */
+/* EXPANDERS */
+/* ============================================ */
+
+/* Cabeçalho do expander (sempre visível) */
+[data-testid="stExpander"] summary {
+  background: white !important;
+  border: 2px solid var(--gray-200) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 1rem 1.5rem !important;
+  color: var(--gray-800) !important;
+  font-weight: 600 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+  background: var(--primary-50) !important;
+  border-color: var(--primary-300) !important;
+  color: var(--primary-700) !important;
+}
+
+/* Conteúdo do expander quando expandido */
+[data-testid="stExpander"] > div[role="region"] {
+  background: white !important;
+  border: 2px solid var(--gray-200) !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  margin-top: -0.5rem !important;
+}
+
+/* Ícone do expander */
+[data-testid="stExpander"] summary svg {
+  color: var(--primary-600) !important;
 }
 
 /* ============================================ */
@@ -702,6 +769,63 @@ h3 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-400);
+}
+
+/* ============================================ */
+/* TABS/ABAS PRINCIPAIS */
+/* ============================================ */
+
+/* Container das tabs */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 0.5rem;
+  background: transparent;
+  padding: 0.5rem 0;
+}
+
+/* Cada tab individual */
+.stTabs [data-baseweb="tab"] {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.5rem;
+  color: var(--gray-700) !important;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border: 2px solid var(--gray-200);
+  transition: all 0.2s ease;
+}
+
+/* Tab em hover */
+.stTabs [data-baseweb="tab"]:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-700) !important;
+  transform: translateY(-2px);
+}
+
+/* Tab ativa/selecionada */
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+  border-color: var(--primary-600);
+  color: white !important;
+  box-shadow: var(--shadow-primary);
+}
+
+/* Texto dentro das tabs */
+.stTabs [data-baseweb="tab"] p,
+.stTabs [data-baseweb="tab"] span,
+.stTabs [data-baseweb="tab"] div {
+  color: inherit !important;
+  margin: 0;
+}
+
+/* Linha indicadora embaixo (remover) */
+.stTabs [data-baseweb="tab-highlight"] {
+  background-color: transparent;
+}
+
+/* Barra inferior das tabs */
+.stTabs [data-baseweb="tab-border"] {
+  background-color: transparent;
 }
 
 /* ============================================ */
