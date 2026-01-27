@@ -117,7 +117,14 @@ h3 {
 [data-testid="stSidebar"] p,
 [data-testid="stSidebar"] label,
 [data-testid="stSidebar"] .stSelectbox label,
-[data-testid="stSidebar"] .stRadio label {
+[data-testid="stSidebar"] .stRadio label,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] span {
+  color: white !important;
+}
+
+/* Forçar texto branco em todos os elementos da sidebar */
+[data-testid="stSidebar"] * {
   color: white !important;
 }
 
@@ -131,6 +138,46 @@ h3 {
 [data-testid="stSidebar"] a:hover {
   color: white !important;
   transform: translateX(4px);
+}
+
+/* Botões de rádio na sidebar (abas) */
+[data-testid="stSidebar"] .stRadio > label {
+  color: white !important;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label {
+  background: rgba(255, 255, 255, 0.1) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.5rem !important;
+  margin: 0.25rem 0 !important;
+  transition: all 0.2s ease !important;
+  color: white !important;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(4px) !important;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-color: white !important;
+}
+
+/* Radio button selecionado */
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label[data-baseweb="radio"][aria-checked="true"] {
+  background: rgba(255, 255, 255, 0.25) !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label[data-baseweb="radio"][aria-checked="true"] > div:first-child {
+  background-color: white !important;
+  border-color: white !important;
+}
+
+/* Texto do radio button */
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label span {
+  color: white !important;
 }
 
 /* Separadores na sidebar */
